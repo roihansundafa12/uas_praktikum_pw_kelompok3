@@ -6,6 +6,10 @@
   },
   "routes": [
     {
+      "src": "/images/(.*)",
+      "dest": "/images/$1"
+    },
+    {
       "src": "/(.*)",
       "dest": "/api/UAS_PRAKTIKUM_PW_KELOMPOK3.php"
     }
