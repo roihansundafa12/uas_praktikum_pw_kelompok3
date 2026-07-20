@@ -90,7 +90,7 @@ nav{
   top:55%;left:50%;transform:translate(-50%,-50%);pointer-events:none;z-index:0;
 }
 .single-cup img{
-  width:400px;max-width:100%;height:400px;object-fit:cover;border-radius:30px;
+  width:560px;max-width:100%;object-fit:contain;
   filter:drop-shadow(0 25px 40px rgba(233,30,99,.20));
   animation:floatCup 4s ease-in-out infinite;position:relative;z-index:1;
 }
@@ -124,7 +124,7 @@ nav{
   background:linear-gradient(135deg,var(--red),var(--pink));
   color:white;padding:5px 14px;border-radius:50px;font-size:.7rem;font-weight:800;
 }
-.cwrap img{width:140px;height:140px;object-fit:cover;border-radius:20px;margin-bottom:15px;filter:drop-shadow(0 10px 18px rgba(233,30,99,.18));}
+.cwrap img{width:140px;margin-bottom:15px;filter:drop-shadow(0 10px 18px rgba(233,30,99,.18));}
 .cname{font-family:'Passion One',sans-serif;font-size:1.2rem;margin-bottom:6px;}
 .cprice{color:var(--red);font-weight:900;font-size:1.1rem;margin-bottom:18px;}
 .cbtn{
@@ -143,7 +143,7 @@ nav{
 .mgrid-all{
   display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:26px;
 }
-.mcard-list .cwrap img{width:120px; height:120px;}
+.mcard-list .cwrap img{width:120px;}
 .mcard-list{padding:22px 16px;}
 .sec-divider{margin-top:70px;}
 
@@ -156,7 +156,7 @@ nav{
 .about-text h2{font-family:'Passion One',sans-serif;font-size:clamp(2.3rem,5vw,4rem);color:white;margin-bottom:20px;}
 .about-text em{font-family:'Dancing Script',cursive;font-style:normal;}
 .about-text p{color:rgba(255,255,255,.9);line-height:1.9;margin-bottom:18px;}
-.about-cups img{width:330px;max-width:100%;border-radius:20px;filter:drop-shadow(0 18px 30px rgba(233,30,99,.22));}
+.about-cups img{width:330px;max-width:100%;filter:drop-shadow(0 18px 30px rgba(233,30,99,.22));}
 
 /* FOOTER */
 footer{
@@ -170,7 +170,9 @@ footer p{color:rgba(255,255,255,.35);}
 .flinks a{color:rgba(255,255,255,.45);text-decoration:none;transition:.3s;}
 .flinks a:hover{color:var(--pink);}
 
-/* PRODUCT DETAIL MODAL */
+/* ═══════════════════════════════
+   PRODUCT DETAIL MODAL
+═══════════════════════════════ */
 #detail-overlay{
   display:none;position:fixed;inset:0;z-index:1100;
   background:rgba(45,27,46,.55);backdrop-filter:blur(6px);
@@ -192,10 +194,9 @@ footer p{color:rgba(255,255,255,.35);}
   padding:36px 20px 20px;
   display:flex;justify-content:center;align-items:flex-end;
   min-height:230px;overflow:hidden;
-  background: #FFF0F5;
 }
 .dp-hero-img{
-  width:160px;height:160px;object-fit:cover;border-radius:20px;
+  width:190px;max-width:55%;object-fit:contain;
   filter:drop-shadow(0 20px 35px rgba(233,30,99,.3));
   position:relative;z-index:1;
   animation:floatCup 4s ease-in-out infinite;
@@ -253,6 +254,7 @@ footer p{color:rgba(255,255,255,.35);}
   border:1px solid #FFE8F4;
 }
 .ing-icon{font-size:1.1rem;flex-shrink:0;}
+.ing-full{grid-column:1/-1;}
 
 .top-list{list-style:none;padding:0;margin:0;}
 .top-list li{
@@ -287,7 +289,9 @@ footer p{color:rgba(255,255,255,.35);}
 }
 .dp-wish:hover{background:#FFE0EC;}
 
-/* CART SIDEBAR + CHECKOUT FLOW */
+/* ═══════════════════════════════
+   CART SIDEBAR + CHECKOUT FLOW
+═══════════════════════════════ */
 #cart-fab{
   position:fixed;bottom:30px;right:30px;z-index:999;
   width:64px;height:64px;border-radius:50%;
@@ -327,10 +331,13 @@ footer p{color:rgba(255,255,255,.35);}
 .co-back:hover{background:#FFE0EC;}
 .co-title{font-family:'Passion One',sans-serif;font-size:1.5rem;color:#2D1B2E;flex:1;}
 .co-body{padding:24px 28px;}
+.steps{display:flex;justify-content:center;gap:8px;padding:12px 0 0;}
+.step-dot{width:8px;height:8px;border-radius:50%;background:#FFD0E8;transition:.3s;}
+.step-dot.active{background:var(--red);width:24px;border-radius:4px;}
 
 .cart-item{display:flex;align-items:center;gap:14px;padding:14px 0;border-bottom:1px solid #FFE8F0;}
 .cart-item:last-child{border-bottom:none;}
-.ci-img{width:64px;height:64px;object-fit:cover;border-radius:14px;background:#FFF0F5;flex-shrink:0;padding:4px;}
+.ci-img{width:64px;height:64px;object-fit:contain;border-radius:14px;background:#FFF0F5;flex-shrink:0;padding:4px;}
 .ci-info{flex:1;}
 .ci-name{font-weight:800;font-size:.95rem;color:#2D1B2E;margin-bottom:4px;}
 .ci-price{color:var(--red);font-weight:900;font-size:.9rem;}
@@ -379,6 +386,14 @@ footer p{color:rgba(255,255,255,.35);}
 .success-title{font-family:'Passion One',sans-serif;font-size:1.8rem;color:#2D1B2E;margin-bottom:8px;}
 .success-sub{color:#888;line-height:1.6;font-size:.9rem;margin-bottom:20px;}
 .order-code{background:#FFF0F5;border-radius:12px;padding:12px 20px;font-weight:900;color:var(--red);letter-spacing:.08em;font-size:1rem;display:inline-block;margin-bottom:20px;}
+.reko-title{font-family:'Passion One',sans-serif;font-size:1.2rem;color:#2D1B2E;margin:20px 0 12px;text-align:left;}
+.reko-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.reko-card{background:#FFF5F8;border-radius:16px;padding:12px;text-align:center;cursor:pointer;border:2px solid transparent;transition:.25s;}
+.reko-card:hover{border-color:var(--red);}
+.reko-card img{width:70px;height:70px;object-fit:contain;margin-bottom:6px;}
+.reko-name{font-weight:800;font-size:.8rem;color:#2D1B2E;margin-bottom:4px;}
+.reko-price{color:var(--red);font-weight:900;font-size:.85rem;}
+.reko-add{display:block;margin:8px auto 0;background:linear-gradient(135deg,var(--red),var(--pink));color:white;border:none;border-radius:50px;padding:5px 14px;font-size:.75rem;font-weight:800;cursor:pointer;transition:.2s;font-family:'Nunito',sans-serif;}
 .voucher-row{display:flex;gap:10px;margin-bottom:16px;}
 .voucher-input{flex:1;padding:12px 16px;border-radius:12px;border:2px solid #FFE0EC;font-family:'Nunito',sans-serif;font-size:.9rem;outline:none;transition:.2s;}
 .voucher-input:focus{border-color:var(--red);}
@@ -391,7 +406,7 @@ footer p{color:rgba(255,255,255,.35);}
   .hero-visual{order:-1;}
   .hero-desc{margin:auto auto 30px;}
   .hero-btns{justify-content:center;}
-  .single-cup img{width:340px; height:340px;}
+  .single-cup img{width:340px;}
   .sec{padding:60px 24px;}
   .about{padding:60px 24px;}
   .about-in{grid-template-columns:1fr;}
@@ -419,6 +434,7 @@ footer p{color:rgba(255,255,255,.35);}
     <li><a href="#" class="active">Home</a></li>
     <li><a href="#menu">Menu</a></li>
     <li><a href="#about">About</a></li>
+    <li><a href="#">Contact</a></li>
   </ul>
   <a href="#menu" class="nav-cta">Order Now 🍓</a>
 </nav>
@@ -438,351 +454,617 @@ footer p{color:rgba(255,255,255,.35);}
   </div>
   <div class="hero-visual">
     <div class="single-cup">
-      <img src="https://images.unsplash.com/photo-1579613832125-5d34a13ffe2a?w=500&auto=format&fit=crop&q=60" alt="Algosmooth Special Cup">
+      <!-- Tambahkan ../ di depan images -->
+      <img src="../images/strawberry.png" alt="Algosmooth Hero">
     </div>
   </div>
 </section>
 
 <!-- STATS -->
-<section class="stats">
-  <div class="st">
-    <div class="stn">100%</div>
-    <div class="stl">Buah Asli</div>
-  </div>
-  <div class="st">
-    <div class="stn">15k+</div>
-    <div class="stl">Pelanggan Puas</div>
-  </div>
-  <div class="st">
-    <div class="stn">0%</div>
-    <div class="stl">Pengawet</div>
-  </div>
-</section>
+<div class="stats">
+  <div class="st"><div class="stn">50+</div><div class="stl">Menu Pilihan</div></div>
+  <div class="st"><div class="stn">10K+</div><div class="stl">Pelanggan Puas</div></div>
+  <div class="st"><div class="stn">100%</div><div class="stl">Buah Asli</div></div>
+  <div class="st"><div class="stn">5 ⭐</div><div class="stl">Rating Terbaik</div></div>
+</div>
 
-<!-- MENU SECTION -->
-<section id="menu" class="sec">
+<!-- MENU -->
+<section class="sec" id="menu">
+
+  <!-- MENU FAVORIT -->
   <div class="shead">
-    <span class="seye">Fresh & Creamy</span>
-    <h2 class="stit">Menu <span>Favorit</span> Kami</h2>
+    <div class="seye">Pilihan Terpopuler</div>
+    <h2 class="stit">MENU <span>FAVORIT</span></h2>
   </div>
-  
   <div class="mgrid-favorit">
-    <!-- Card 1 -->
-    <div class="mcard" onclick="openDetail('Strawberry Creamy Zen', 28000, 'Zen-fully sweet with fresh berry puree.', 'https://images.unsplash.com/photo-1553530666-ba11a7da3888?w=400&auto=format&fit=crop&q=60')">
-      <span class="cbadge">Best Seller ⭐</span>
-      <div class="cwrap">
-        <img src="https://images.unsplash.com/photo-1553530666-ba11a7da3888?w=400&auto=format&fit=crop&q=60" alt="Strawberry Zen">
-      </div>
-      <h3 class="cname">Strawberry Creamy Zen</h3>
-      <p class="cprice">Rp 28.000</p>
-      <button class="cbtn">Lihat Detail</button>
+    
+    <div class="mcard" onclick="openDetail(0,'favorit',event)">
+      <div class="cbadge">Popular</div>
+        <div class="cwrap">
+          <a href="https://link-tujuan-kamu.com">
+            <!-- Diubah ke folder lokal images -->
+            <img src="../images/mango.png" alt="Mango Smoothie">
+          </a>
+        </div>
+      <div class="cname">Mango Smoothie</div>
+      <div class="cprice">Rp 15.000</div>
+      <button class="cbtn" onclick="addCart(this)">+ Tambah ke Keranjang</button>
     </div>
-
-    <!-- Card 2 -->
-    <div class="mcard" onclick="openDetail('Mango Algosmoothie', 26000, 'Tropical blend with sweet mango cubes.', 'https://images.unsplash.com/photo-1546173159-315724a31696?w=400&auto=format&fit=crop&q=60')">
-      <span class="cbadge">Premium ✨</span>
-      <div class="cwrap">
-        <img src="https://images.unsplash.com/photo-1546173159-315724a31696?w=400&auto=format&fit=crop&q=60" alt="Mango Smoothie">
-      </div>
-      <h3 class="cname">Mango Algosmoothie</h3>
-      <p class="cprice">Rp 26.000</p>
-      <button class="cbtn">Lihat Detail</button>
+    <div class="mcard" onclick="openDetail(1,'favorit',event)">
+      <div class="cbadge">Best Seller</div>
+        <div class="cwrap">
+          <a href="halaman-strawberry.html">
+            <!-- Diubah ke lokal dengan ../ agar mengarah ke folder images di luar folder api -->
+            <img src="../images/strawberry.png" alt="Strawberry Smoothie">
+          </a>
+        </div>      
+      <div class="cname">Strawberry Smoothie</div>
+      <div class="cprice">Rp 15.000</div>
+      <button class="cbtn" onclick="addCart(this)">+ Tambah ke Keranjang</button>
     </div>
-
-    <!-- Card 3 -->
-    <div class="mcard" onclick="openDetail('Avocado Choco Velvet', 30000, 'Rich butter avocado mixed with premium chocolate.', 'https://images.unsplash.com/photo-1541658016709-82535e94bc69?w=400&auto=format&fit=crop&q=60')">
-      <span class="cbadge">New Release 🔥</span>
-      <div class="cwrap">
-        <img src="https://images.unsplash.com/photo-1541658016709-82535e94bc69?w=400&auto=format&fit=crop&q=60" alt="Avocado Velvet">
-      </div>
-      <h3 class="cname">Avocado Choco Velvet</h3>
-      <p class="cprice">Rp 30.000</p>
-      <button class="cbtn">Lihat Detail</button>
+    <div class="mcard" onclick="openDetail(2,'favorit',event)">
+      <div class="cbadge">Premium</div>
+        <div class="cwrap">
+          <a href="halaman-dragon-fruit.html">
+            <!-- Diubah ke lokal menuju folder images di luar folder api -->
+            <img src="../images/dragon-fruit.png" alt="Dragon Fruit Smoothie">
+          </a>
+        </div>     
+      <div class="cname">Dragon Fruit Smoothie</div>
+      <div class="cprice">Rp 20.000</div>
+      <button class="cbtn" onclick="addCart(this)">+ Tambah ke Keranjang</button>
     </div>
   </div>
+
+  <!-- DAFTAR MENU -->
+  <div class="shead sec-divider">
+    <div class="seye">Semua Pilihan Rasa</div>
+    <h2 class="stit">DAFTAR <span>MENU</span></h2>
+  </div>
+  <div class="mgrid-all">
+    
+    <div class="mcard" onclick="openDetail(0,'all',event)">
+      <div class="cbadge">Popular</div>
+        <div class="cwrap">
+          <a href="https://link-tujuan-kamu.com">
+            <!-- Diubah ke folder lokal images -->
+            <img src="../images/mango.png" alt="Mango Smoothie">
+          </a>
+        </div>     
+      <div class="cname">Mango Smoothie</div>
+      <div class="cprice">Rp 15.000</div>
+      <button class="cbtn" onclick="addCart(this)">+ Tambah ke Keranjang</button>
+    </div>
+    <div class="mcard" onclick="openDetail(1,'all',event)">
+      <div class="cbadge">Best Seller</div>
+        <div class="cwrap">
+          <a href="https://link-tujuan-kamu.com">
+            <!-- Diubah ke folder lokal images -->
+            <img src="../images/strawberry.png" alt="Strawberry Smoothie">
+          </a>
+        </div>
+      <div class="cname">Strawberry Smoothie</div>
+      <div class="cprice">Rp 15.000</div>
+      <button class="cbtn" onclick="addCart(this)">+ Tambah ke Keranjang</button>
+    </div>
+    <div class="mcard" onclick="openDetail(2,'all',event)">
+      <div class="cbadge">Premium</div>
+        <div class="cwrap">
+          <a href="halaman-dragon-fruit.html">
+            <!-- Diubah ke lokal menuju folder images di luar folder api -->
+            <img src="../images/dragon-fruit.png" alt="Dragon Fruit Smoothie">
+          </a>
+        </div>      
+      <div class="cname">Dragon Fruit Smoothie</div>
+      <div class="cprice">Rp 20.000</div>
+      <button class="cbtn" onclick="addCart(this)">+ Tambah ke Keranjang</button>
+    </div>
+    <div class="mcard" onclick="openDetail(3,'all',event)">
+      <div class="cbadge">Healthy</div>
+        <div class="cwrap">
+          <a href="halaman-Avocado.html">
+            <!-- Diubah ke lokal menuju folder images di luar folder api -->
+          <a href="halaman-Avocado.html">
+            <img src="../images/Avocado.png" alt="Avocado Smoothie">
+          </a>
+        </div>  
+      <div class="cname">Avocado Smoothie</div>
+      <div class="cprice">Rp 12.000</div>
+      <button class="cbtn" onclick="addCart(this)">+ Tambah ke Keranjang</button>
+    </div>
+    <div class="mcard" onclick="openDetail(4,'all',event)">
+      <div class="cbadge">Fresh</div>
+        <div class="cwrap">
+          <a href="halaman-melon.html">
+            <!-- Diubah ke lokal dengan ../ agar mengarah ke folder images di luar folder api -->
+            <img src="../images/melon.png" alt="Melon Smoothie">
+          </a>
+        </div>      
+      <div class="cname">Melon Smoothie</div>
+      <div class="cprice">Rp 12.000</div>
+      <button class="cbtn" onclick="addCart(this)">+ Tambah ke Keranjang</button>
+    </div>
+    <div class="mcard" onclick="openDetail(5,'all',event)">
+      <div class="cbadge">Tropical</div>
+        <div class="cwrap">
+          <a href="halaman-Avocado.html">
+            <!-- Diubah ke lokal menuju folder images di luar folder api -->
+          <a href="halaman-nanas.html">
+            <img src="../images/nanas.png" alt="Nanas Smoothie">
+          </a>
+        </div>       
+      <div class="cname">Nanas Smoothie</div>
+      <div class="cprice">Rp 12.000</div>
+      <button class="cbtn" onclick="addCart(this)">+ Tambah ke Keranjang</button>
+    </div>
+    <div class="mcard" onclick="openDetail(6,'all',event)">
+      <div class="cbadge">Special</div>
+        <div class="cwrap">
+          <a href="halaman-Avocado.html">
+            <!-- Diubah ke lokal menuju folder images di luar folder api -->
+          <a href="halaman-sirsak.html">
+            <img src="../images/sirsak.png" alt="Sirsak Smoothie">
+          </a>
+        </div>        
+      <div class="cname">Sirsak Smoothie</div>
+      <div class="cprice">Rp 12.000</div>
+      <button class="cbtn" onclick="addCart(this)">+ Tambah ke Keranjang</button>
+    </div>
+  </div>
+
 </section>
 
-<!-- ABOUT SECTION -->
-<section id="about" class="about">
+<!-- ABOUT -->
+<section class="about" id="about">
   <div class="about-in">
     <div class="about-text">
-      <h2>Rahasia Kesegaran <em>AlgoSmooth</em></h2>
-      <p>Setiap cangkir diracik menggunakan formula buah pilihan segar yang diproses secara higienis, menghasilkan tekstur selembut sutra tanpa merusak nutrisi vitamin alaminya.</p>
-    </div>
-    <div class="about-cups">
-      <img src="https://images.unsplash.com/photo-1579613832125-5d34a13ffe2a?w=500&auto=format&fit=crop&q=60" alt="About Algosmooth">
-    </div>
-  </div>
+      <h2>Dibuat dengan <em>Cinta</em> & Buah Segar</h2>
+      <p>ALGOSMOOTH menghadirkan smoothie premium dengan perpaduan buah segar dan cream lembut yang memberikan sensasi fresh di setiap tegukan.</p>
+      <p>Tanpa pengawet, tanpa pemanis buatan, hanya rasa alami terbaik untuk menemani harimu.</p>
+      <a href="#menu" class="btn-main">PESAN SEKARANG 🍓</a>
+      <div class="cwrap" style="display: inline-block; vertical-align: middle;">
+        <a href="halaman-about.html">
+          <img src="../images/strawberry.png" alt="About Smoothies">
+        </a>
+      </div>
+      
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <div>
-    <div class="fbrand">ALGOSMOOTH</div>
-    <span class="fsub">Born to Fresh</span>
+  <div class="fbrand">ALGOSMOOTH<span class="fsub">born to fresh</span></div>
+  <p>© 2026 ALGOSMOOTH. All rights reserved.</p>
+  <div class="flinks">
+    <a href="#"></a>
+    <a href="https://www.instagram.com/algosmooth_official?igsh=MXFsZ25hbmFxbmpjNw==" target="_blank">
+    📸 Instagram
+</a>
+    <a href="https://www.tiktok.com/@algosmooth?_r=1&_t=ZS-98Bct9fH1Ua" target="_blank">
+    🎵 TikTok: @Algosmooth_official
+</a>
+    <a href="https://wa.me/qr/JQJHW6AHUX4UI1" target="_blank">
+    💬 WhatsApp
+</a>
   </div>
-  <p>&copy; 2026 Algosmooth Indonesia. All rights reserved.</p>
 </footer>
 
-<!-- PRODUCT DETAIL MODAL -->
-<div id="detail-overlay">
-  <div class="detail-panel">
-    <div class="dp-hero">
-      <span class="dp-badge-hero">Pilihan Terbaik</span>
-      <button class="dp-close" onclick="closeDetail()">&times;</button>
-      <img id="modal-img" class="dp-hero-img" src="" alt="Detail Drink">
-    </div>
-    <div class="dp-body">
-      <div class="dp-rating">
-        <span class="dp-stars">⭐⭐⭐⭐⭐</span> (4.9/5)
-      </div>
-      <h2 id="modal-name" class="dp-name">Nama Produk</h2>
-      <p id="modal-sub" class="dp-sub">Deskripsi singkat produk.</p>
-      
-      <div class="dp-price-row">
-        <span id="modal-price" class="dp-price">Rp 0</span>
-        <div class="dp-qty">
-          <button class="dpq-btn" onclick="updateModalQty(-1)">-</button>
-          <span id="modal-qty-val" class="dpq-num">1</span>
-          <button class="dpq-btn" onclick="updateModalQty(1)">+</button>
-        </div>
-      </div>
-
-      <div class="dp-sec-title">Komposisi Premium</div>
-      <div class="ing-grid">
-        <div class="ing-item"><span class="ing-icon">🍓</span> Buah Segar Pilihan</div>
-        <div class="ing-item"><span class="ing-icon">🥛</span> Susu Almond / Oat</div>
-        <div class="ing-item"><span class="ing-icon">🍯</span> Madu Alami murni</div>
-        <div class="ing-item"><span class="ing-icon">🧊</span> Es Serut Kristal</div>
-      </div>
-
-      <div class="fresh-badge">🌱 Dijamin 100% Organik & Segar Tanpa Pemanis Buatan</div>
-
-      <div class="dp-actions">
-        <button class="dp-add" onclick="addToCartFromModal()">Tambah ke Keranjang</button>
-        <button class="dp-wish">❤️</button>
-      </div>
-    </div>
-  </div>
-</div>
-
 <!-- CART FAB -->
-<button id="cart-fab" onclick="openCheckout()">
-  🛒 <span id="cart-count">0</span>
-</button>
+<button id="cart-fab" onclick="openCheckout()">🛒<div id="cart-count">0</div></button>
 
-<!-- CHECKOUT FLOW OVERLAY -->
-<div id="checkout-overlay">
-  <div class="co-panel">
-    <div class="co-header">
-      <button class="co-back" onclick="closeCheckout()">←</button>
-      <h2 class="co-title" id="checkout-panel-title">Keranjang Belanja</h2>
+<!-- CHECKOUT OVERLAY -->
+<div id="checkout-overlay" onclick="overlayClick(event)">
+  <div class="co-panel" id="co-panel">
+    <div class="steps" id="co-steps">
+      <div class="step-dot active" id="dot-0"></div>
+      <div class="step-dot" id="dot-1"></div>
+      <div class="step-dot" id="dot-2"></div>
+      <div class="step-dot" id="dot-3"></div>
     </div>
-    <div class="co-body" id="checkout-content">
-      <!-- Dinamis via JavaScript -->
+    <!-- STEP 0: Cart -->
+    <div id="step-cart">
+      <div class="co-header">
+        <button class="co-back" onclick="closeCheckout()">✕</button>
+        <div class="co-title">Keranjang 🛒</div>
+      </div>
+      <div class="co-body">
+        <div id="cart-items-list"></div>
+        <div id="cart-empty" class="empty-cart" style="display:none">
+          <div class="big">🛒</div>
+          <p style="font-weight:800">Keranjang masih kosong</p>
+          <p style="font-size:.85rem;color:#bbb;margin-top:4px">Yuk tambah smoothie favoritmu!</p>
+        </div>
+        <div id="cart-summary" class="co-summary">
+          <div class="sum-row"><span>Subtotal</span><span id="sub-total">Rp 0</span></div>
+          <div class="sum-row"><span>Ongkir</span><span>Rp 2.000</span></div>
+          <div class="sum-total"><span>Total</span><span id="grand-total">Rp 2.000</span></div>
+        </div>
+        <button class="co-btn" id="btn-checkout" onclick="goStep(1)">Lanjut ke Konfirmasi →</button>
+        <button class="co-btn ghost" onclick="closeCheckout()">Lanjut Belanja</button>
+      </div>
     </div>
-  </div>
-</div>
-
-<!-- JAVASCRIPT LOGIC -->
-<script>
-let currentProduct = null;
-let modalQty = 1;
-let cart = [];
-let discount = 0;
-let currentStep = 'cart'; // 'cart', 'payment', 'success'
-
-function openDetail(name, price, desc, img) {
-  currentProduct = { name, price, desc, img };
-  modalQty = 1;
-  document.getElementById('modal-name').innerText = name;
-  document.getElementById('modal-price').innerText = 'Rp ' + price.toLocaleString('id-ID');
-  document.getElementById('modal-sub').innerText = desc;
-  document.getElementById('modal-img').src = img;
-  document.getElementById('modal-qty-val').innerText = modalQty;
-  document.getElementById('detail-overlay').classList.add('open');
-}
-
-function closeDetail() {
-  document.getElementById('detail-overlay').classList.remove('open');
-}
-
-function updateModalQty(change) {
-  modalQty += change;
-  if(modalQty < 1) modalQty = 1;
-  document.getElementById('modal-qty-val').innerText = modalQty;
-}
-
-function addToCartFromModal() {
-  const existingItem = cart.find(item => item.name === currentProduct.name);
-  if(existingItem) {
-    existingItem.qty += modalQty;
-  } else {
-    cart.push({
-      name: currentProduct.name,
-      price: currentProduct.price,
-      img: currentProduct.img,
-      qty: modalQty
-    });
-  }
-  updateCartBadge();
-  closeDetail();
-}
-
-function updateCartBadge() {
-  const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
-  document.getElementById('cart-count').innerText = totalItems;
-}
-
-function openCheckout() {
-  currentStep = 'cart';
-  document.getElementById('checkout-overlay').classList.add('open');
-  renderCheckout();
-}
-
-function closeCheckout() {
-  document.getElementById('checkout-overlay').classList.remove('open');
-}
-
-function changeQty(index, change) {
-  cart[index].qty += change;
-  if(cart[index].qty <= 0) {
-    cart.splice(index, 1);
-  }
-  updateCartBadge();
-  renderCheckout();
-}
-
-function deleteItem(index) {
-  cart.splice(index, 1);
-  updateCartBadge();
-  renderCheckout();
-}
-
-function applyVoucher() {
-  const code = document.getElementById('v-code').value.toUpperCase();
-  if(code === 'FRESH20') {
-    discount = 20000;
-    alert('Kupon Berhasil! Potongan Rp 20.000 digunakan.');
-  } else {
-    alert('Kupon tidak valid.');
-    discount = 0;
-  }
-  renderCheckout();
-}
-
-function renderCheckout() {
-  const content = document.getElementById('checkout-content');
-  const title = document.getElementById('checkout-panel-title');
-
-  if(currentStep === 'cart') {
-    title.innerText = "Keranjang Belanja";
-    if(cart.length === 0) {
-      content.innerHTML = `
-        <div class="empty-cart">
-          <div class="big">🥤</div>
-          <p>Keranjangmu masih kosong yuk isi kesegaran!</p>
-        </div>`;
-      return;
-    }
-
-    let subtotal = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
-    let total = subtotal - discount;
-    if(total < 0) total = 0;
-
-    let itemsHtml = cart.map((item, idx) => `
-      <div class="cart-item">
-        <img class="ci-img" src="${item.img}" alt="${item.name}">
-        <div class="ci-info">
-          <div class="ci-name">${item.name}</div>
-          <div class="ci-price">Rp ${(item.price * item.qty).toLocaleString('id-ID')}</div>
-          <div class="ci-qty">
-            <button class="qty-btn" onclick="changeQty(${idx}, -1)">-</button>
-            <span class="qty-num">${item.qty}</span>
-            <button class="qty-btn" onclick="changeQty(${idx}, 1)">+</button>
+    <!-- STEP 1: Confirm -->
+    <div id="step-confirm" style="display:none">
+      <div class="co-header">
+        <button class="co-back" onclick="goStep(0)">←</button>
+        <div class="co-title">Konfirmasi Pesanan</div>
+      </div>
+      <div class="co-body">
+        <p style="color:#888;font-size:.85rem;margin-bottom:16px">Periksa rincian pesananmu</p>
+        <div id="confirm-items"></div>
+        <div class="co-summary" style="margin-top:12px">
+          <div class="detail-row"><span class="detail-label">Item</span><span class="detail-val" id="cf-items">-</span></div>
+          <div class="detail-row"><span class="detail-label">Subtotal</span><span class="detail-val" id="cf-sub">-</span></div>
+          <div class="detail-row"><span class="detail-label">Ongkir</span><span class="detail-val">Rp 2.000</span></div>
+          <div class="sum-total"><span>Total Bayar</span><span id="cf-total" style="color:var(--red)">-</span></div>
+        </div>
+        <div style="margin-top:16px">
+          <p style="font-weight:800;margin-bottom:8px;color:#2D1B2E">Punya Voucher?</p>
+          <div class="voucher-row">
+            <input class="voucher-input" placeholder="Masukkan kode voucher..." id="voucher-in">
+            <button class="voucher-btn" onclick="applyVoucher()">Pakai</button>
           </div>
         </div>
-        <button class="ci-del" onclick="deleteItem(${idx})">&times;</button>
+        <button class="co-btn" onclick="goStep(2)">Pilih Pembayaran →</button>
+        <button class="co-btn ghost" onclick="goStep(0)">← Kembali</button>
       </div>
-    `).join('');
-
-    content.innerHTML = `
-      <div class="cart-list">${itemsHtml}</div>
-      <div class="voucher-row" style="margin-top:20px;">
-        <input type="text" id="v-code" class="voucher-input" placeholder="Kode Promo (cth: FRESH20)" value="${discount > 0 ? 'FRESH20' : ''}">
-        <button class="voucher-btn" onclick="applyVoucher()">Pakai</button>
+    </div>
+    <!-- STEP 2: Payment -->
+    <div id="step-payment" style="display:none">
+      <div class="co-header">
+        <button class="co-back" onclick="goStep(1)">←</button>
+        <div class="co-title">Metode Pembayaran</div>
       </div>
-      <div class="co-summary">
-        <div class="sum-row"><span>Subtotal</span><span>Rp ${subtotal.toLocaleString('id-ID')}</span></div>
-        <div class="sum-row"><span>Diskon Kupon</span><span>- Rp ${discount.toLocaleString('id-ID')}</span></div>
-        <div class="sum-total"><span>Total Harga</span><span>Rp ${total.toLocaleString('id-ID')}</span></div>
-      </div>
-      <button class="co-btn" onclick="goToPayment()">Lanjut ke Pembayaran</button>
-    `;
-  } 
-  else if(currentStep === 'payment') {
-    title.innerText = "Metode Pembayaran";
-    let subtotal = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
-    let total = subtotal - discount;
-
-    content.innerHTML = `
-      <div class="pay-section">
-        <div class="pay-label">Pilih E-Wallet / Transfer</div>
-        <div class="pay-card selected" onclick="selectPay(this)">
-          <div class="pay-icon">🥝</div>
-          <div class="pay-info"><div class="pay-name">GOPAY</div><div class="pay-sub">Instan & Bebas Biaya Admin</div></div>
-          <div class="pay-radio"></div>
+      <div class="co-body">
+        <p style="color:#888;font-size:.85rem;margin-bottom:18px">Pilih cara pembayaranmu</p>
+        <div class="pay-section">
+          <div class="pay-label">Tunai</div>
+          <div class="pay-card" onclick="selectPay(this,'cash')">
+            <div class="pay-icon">💵</div>
+            <div class="pay-info"><div class="pay-name">Cash / Tunai</div><div class="pay-sub">Bayar langsung saat terima pesanan</div></div>
+            <div class="pay-radio"></div>
+          </div>
         </div>
-        <div class="pay-card" onclick="selectPay(this)">
-          <div class="pay-icon">🧋</div>
-          <div class="pay-info"><div class="pay-name">OVO / DANA</div><div class="pay-sub">Konfirmasi Cepat 1 Detik</div></div>
-          <div class="pay-radio"></div>
+        <div class="pay-section">
+          <div class="pay-label">E-Wallet</div>
+          <div class="pay-card" onclick="selectPay(this,'dana')">
+            <div class="pay-icon">💙</div>
+            <div class="pay-info"><div class="pay-name">DANA</div><div class="pay-sub">Transfer ke DANA 0812-XXXX-XXXX</div></div>
+            <div class="pay-radio"></div>
+          </div>
+          <div class="pay-card" onclick="selectPay(this,'gopay')">
+            <div class="pay-icon">💚</div>
+            <div class="pay-info"><div class="pay-name">GoPay</div><div class="pay-sub">Transfer ke GoPay 0812-XXXX-XXXX</div></div>
+            <div class="pay-radio"></div>
+          </div>
+        </div>
+        <div class="co-summary">
+          <div class="sum-total"><span>Total Bayar</span><span id="pay-total" style="color:var(--red)">-</span></div>
+        </div>
+        <button class="co-btn green" onclick="placeOrder()">✓ Pesan Sekarang</button>
+        <button class="co-btn ghost" onclick="goStep(1)">← Kembali</button>
+      </div>
+    </div>
+    <!-- STEP 3: Success -->
+    <div id="step-success" style="display:none">
+      <div class="co-body" style="padding-top:32px">
+        <div class="success-screen">
+          <div class="success-icon">✓</div>
+          <div class="success-title">Pesanan Berhasil! 🎉</div>
+          <p class="success-sub">Pesananmu sedang diproses.<br>Estimasi siap: <strong>10–15 menit</strong></p>
+          <div class="order-code" id="order-code-display">#ALGO-0000</div>
+          <div style="background:#FFF0F5;border-radius:16px;padding:14px 18px;text-align:left">
+            <div class="detail-row"><span class="detail-label">Metode Bayar</span><span class="detail-val" id="sc-pay">-</span></div>
+            <div class="detail-row"><span class="detail-label">Total</span><span class="detail-val" id="sc-total" style="color:var(--red)">-</span></div>
+          </div>
+        </div>
+        <div class="reko-title">🍹 Mungkin Kamu Suka Juga</div>
+        <div class="reko-grid" id="reko-grid"></div>
+        <button class="co-btn" onclick="closeCheckout();resetCart()">Kembali ke Menu</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PRODUCT DETAIL MODAL -->
+<div id="detail-overlay" onclick="detailOverlayClick(event)">
+  <div class="detail-panel" id="detail-panel">
+    <div class="dp-hero" id="dp-hero">
+      <span class="dp-badge-hero" id="dp-badge">Popular</span>
+      <button class="dp-close" onclick="closeDetail()">✕</button>
+      <img class="dp-hero-img" id="dp-img" src="" alt="">
+    </div>
+    <div class="dp-body">
+      <div class="dp-rating"><span class="dp-stars">★★★★★</span><span id="dp-rating-txt">4.8</span></div>
+      <div class="dp-name" id="dp-name">Smoothie</div>
+      <div class="dp-sub" id="dp-sub">300ml · Tanpa Pengawet</div>
+      <div class="dp-price-row">
+        <div class="dp-price" id="dp-price">Rp 15.000</div>
+        <div class="dp-qty">
+          <button class="dpq-btn" onclick="dpQty(-1)">−</button>
+          <span class="dpq-num" id="dp-qty-num">1</span>
+          <button class="dpq-btn" onclick="dpQty(1)">+</button>
         </div>
       </div>
-      <div class="co-summary">
-        <div class="sum-total"><span>Total Bayar</span><span>Rp ${total.toLocaleString('id-ID')}</span></div>
+      <div class="dp-sec-title">🥤 Bahan Smoothies</div>
+      <div class="ing-grid" id="dp-ing-grid"></div>
+      <div class="dp-sec-title">✨ Bahan Topping & Gelas</div>
+      <ul class="top-list" id="dp-top-list"></ul>
+      <div class="fresh-badge">🌿 Dibuat segar setiap hari — tanpa pengawet, tanpa pemanis buatan</div>
+      <div class="dp-actions">
+        <button class="dp-wish" id="dp-wish" onclick="toggleWish(this)">🤍</button>
+        <button class="dp-add" onclick="dpAddToCart()">🛒 Tambah ke Keranjang</button>
       </div>
-      <button class="co-btn green" onclick="processOrder()">Bayar Sekarang 🌟</button>
-      <button class="co-btn ghost" onclick="currentStep='cart'; renderCheckout();">Kembali</button>
-    `;
-  }
-  else if(currentStep === 'success') {
-    title.innerText = "Pesanan Berhasil";
-    const randomCode = "AS-" + Math.floor(100000 + Math.random() * 900000);
-    content.innerHTML = `
-      <div class="success-screen">
-        <div class="success-icon">✓</div>
-        <h3 class="success-title">Pembayaran Berhasil!</h3>
-        <p class="success-sub">Smoothie Anda sedang diblender segar oleh barista kami. Silakan tunjukkan kode antrean di kasir.</p>
-        <div class="order-code">${randomCode}</div>
-        <button class="co-btn" onclick="clearCartAndClose()">Selesai & Pesan Lagi</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ── Menu Data ──────────────────────────────────────────────────────
+const menuData = [
+  {name:'Mango Smoothie', price:'15.000', badge:'Popular', img:'../images/mango.png'},
+  {name:'Strawberry Smoothie', price:'15.000', badge:'Best Seller', img:'../images/strawberry.png'},
+  {name:'Dragon Fruit Smoothie', price:'20.000', badge:'Premium', img:'../images/Dragon-fruit.png'},
+  {name:'Avocado Smoothie', price:'12.000', badge:'Healthy', img:'../images/Avocado.png'},
+  {name:'Melon Smoothie', price:'12.000', badge:'Fresh', img:'../images/melon.png'},
+  {name:'Nanas Smoothie', price:'12.000', badge:'Tropical', img:'../images/nanas.png'},
+  {name:'Sirsak Smoothie', price:'12.000', badge:'Special', img:'../images/sirsak.png'}
+];
+
+// ── Product Details ────────────────────────────────────────────────
+const productDetails = {
+  'Mango Smoothie':{
+    rating:'4.8 · 200+ terjual',sub:'300ml · Tanpa Pengawet · Buah Asli',
+    heroBg:'linear-gradient(160deg,#FFE8C0 0%,#FFF9E8 100%)',
+    ingredients:[
+      {icon:'🥭',text:'100g daging buah mangga segar'},
+      {icon:'🥛',text:'30ml Susu Kental Manis putih'},
+      {icon:'🍬',text:'20ml sirup gula'},
+      {icon:'🥛',text:'30ml Susu UHT Full Cream'},
+      {icon:'🧊',text:'200g es batu'},
+      {icon:'💧',text:'50ml air matang'},
+    ],
+    topping:['Whipped cream instan','20g Keju Cheddar parut','Potongan dadu buah mangga 🥭']
+  },
+  'Strawberry Smoothie':{
+    rating:'4.9 · 350+ terjual',sub:'300ml · Tanpa Pengawet · Buah Asli',
+    heroBg:'linear-gradient(160deg,#FFE0EC 0%,#FFF0F5 100%)',
+    ingredients:[
+      {icon:'🍓',text:'100g buah stroberi segar'},
+      {icon:'🥛',text:'30ml Susu Kental Manis putih'},
+      {icon:'🍬',text:'20ml sirup gula'},
+      {icon:'🥛',text:'30ml Susu UHT Full Cream'},
+      {icon:'🧊',text:'200g es batu'},
+      {icon:'💧',text:'50ml air matang'},
+    ],
+    topping:['Whipped cream instan','20g Keju Cheddar parut','Potongan buah stroberi segar 🍓']
+  },
+  'Dragon Fruit Smoothie':{
+    rating:'4.7 · 180+ terjual',sub:'300ml · Tanpa Pengawet · Buah Asli',
+    heroBg:'linear-gradient(160deg,#FFD6F0 0%,#FFF0FA 100%)',
+    ingredients:[
+      {icon:'🐉',text:'100g daging buah naga merah'},
+      {icon:'🥛',text:'30ml Susu Kental Manis putih'},
+      {icon:'🍬',text:'20ml sirup gula'},
+      {icon:'🥛',text:'30ml Susu UHT Full Cream'},
+      {icon:'🧊',text:'200g es batu'},
+      {icon:'💧',text:'50ml air matang'},
+    ],
+    topping:['Whipped cream instan','20g Keju Cheddar parut','Potongan buah naga merah 🐉']
+  },
+  'Avocado Smoothie':{
+    rating:'4.8 · 150+ terjual',sub:'300ml · Tanpa Pengawet · Buah Asli',
+    heroBg:'linear-gradient(160deg,#DCEDC8 0%,#F1F8E9 100%)',
+    ingredients:[
+      {icon:'🥑',text:'100g daging buah alpukat matang'},
+      {icon:'🥛',text:'30ml Susu Kental Manis putih'},
+      {icon:'🍬',text:'20ml sirup gula'},
+      {icon:'🥛',text:'30ml Susu UHT Full Cream'},
+      {icon:'🧊',text:'200g es batu'},
+      {icon:'💧',text:'50ml air matang'},
+    ],
+    topping:['Whipped cream instan','20g Keju Cheddar parut','Potongan kecil alpukat segar 🥑']
+  },
+  'Melon Smoothie':{
+    rating:'4.6 · 130+ terjual',sub:'300ml · Tanpa Pengawet · Buah Asli',
+    heroBg:'linear-gradient(160deg,#C8F5D0 0%,#F0FFF4 100%)',
+    ingredients:[
+      {icon:'🍈',text:'100g daging buah melon segar'},
+      {icon:'🥛',text:'30ml Susu Kental Manis putih'},
+      {icon:'🍬',text:'20ml sirup gula'},
+      {icon:'🥛',text:'30ml Susu UHT Full Cream'},
+      {icon:'🧊',text:'200g es batu'},
+      {icon:'💧',text:'50ml air matang'},
+    ],
+    topping:['Whipped cream instan','20g Keju Cheddar parut','Potongan kecil melon segar 🍈']
+  },
+  'Nanas Smoothie':{
+    rating:'4.7 · 120+ terjual',sub:'300ml · Tanpa Pengawet · Buah Asli',
+    heroBg:'linear-gradient(160deg,#FFF9C4 0%,#FFFDE7 100%)',
+    ingredients:[
+      {icon:'🍍',text:'100g daging buah nanas segar'},
+      {icon:'🥛',text:'30ml Susu Kental Manis putih'},
+      {icon:'🍬',text:'20ml sirup gula'},
+      {icon:'🥛',text:'30ml Susu UHT Full Cream'},
+      {icon:'🧊',text:'200g es batu'},
+      {icon:'💧',text:'50ml air matang'},
+    ],
+    topping:['Whipped cream instan','20g Keju Cheddar parut','Potongan kecil nanas segar 🍍']
+  },
+  'Sirsak Smoothie':{
+    rating:'4.8 · 100+ terjual',sub:'300ml · Tanpa Pengawet · Buah Asli',
+    heroBg:'linear-gradient(160deg,#E8F5E9 0%,#F9FBE7 100%)',
+    ingredients:[
+      {icon:'🌿',text:'100g daging buah sirsak segar'},
+      {icon:'🥛',text:'30ml Susu Kental Manis putih'},
+      {icon:'🍬',text:'20ml sirup gula'},
+      {icon:'🥛',text:'30ml Susu UHT Full Cream'},
+      {icon:'🧊',text:'200g es batu'},
+      {icon:'💧',text:'50ml air matang'},
+    ],
+    topping:['Whipped cream instan','20g Keju Cheddar parut','Potongan kecil sirsak segar 🌿']
+  },
+};
+
+// ── Cart State ─────────────────────────────────────────────────────
+let cart=[], payMethod='', orderTotal=0, dpQtyVal=1, dpCurrentName='', dpCurrentPrice=0, dpCurrentImg='';
+
+function fmt(n){ return 'Rp '+n.toLocaleString('id-ID'); }
+function randCode(){ return '#ALGO-'+Math.floor(1000+Math.random()*9000); }
+
+// ── Add to cart from card button ───────────────────────────────────
+function addCart(btn){
+  const card=btn.closest('.mcard');
+  const name=card.querySelector('.cname').textContent.trim();
+  const price=parseInt(card.querySelector('.cprice').textContent.replace(/[^0-9]/g,''));
+  const img=card.querySelector('.cwrap img').src;
+  const ex=cart.find(i=>i.name===name);
+  if(ex)ex.qty++; else cart.push({name,price,qty:1,img});
+  updateCartCount();
+  const old=btn.innerHTML;
+  btn.innerHTML='✓ Ditambahkan!';
+  btn.style.background='linear-gradient(135deg,#43A047,#66BB6A)';
+  setTimeout(()=>{btn.innerHTML=old;btn.style.background='';},2000);
+}
+function updateCartCount(){
+  document.getElementById('cart-count').textContent=cart.reduce((s,i)=>s+i.qty,0);
+}
+function calcSubtotal(){ return cart.reduce((s,i)=>s+(i.price*i.qty),0); }
+
+// ── Checkout ───────────────────────────────────────────────────────
+function openCheckout(){renderCart();document.getElementById('checkout-overlay').classList.add('open');document.body.style.overflow='hidden';}
+function closeCheckout(){document.getElementById('checkout-overlay').classList.remove('open');document.body.style.overflow='';}
+function overlayClick(e){if(e.target.id==='checkout-overlay')closeCheckout();}
+function resetCart(){cart=[];updateCartCount();goStep(0);}
+function goStep(n){
+  ['step-cart','step-confirm','step-payment','step-success'].forEach((id,i)=>{
+    document.getElementById(id).style.display=i===n?'block':'none';
+  });
+  for(let i=0;i<4;i++) document.getElementById('dot-'+i).classList.toggle('active',i<=n);
+  if(n===1)renderConfirm(); if(n===2)renderPayment(); if(n===3)renderSuccess();
+  document.getElementById('co-panel').scrollTop=0;
+}
+function renderCart(){
+  const list=document.getElementById('cart-items-list');
+  const empty=document.getElementById('cart-empty');
+  const summary=document.getElementById('cart-summary');
+  const btn=document.getElementById('btn-checkout');
+  if(cart.length===0){list.innerHTML='';empty.style.display='block';summary.style.display='none';btn.disabled=true;btn.style.opacity='.4';return;}
+  empty.style.display='none';summary.style.display='block';btn.disabled=false;btn.style.opacity='1';
+  list.innerHTML=cart.map((item,idx)=>`
+    <div class="cart-item">
+      <img class="ci-img" src="${item.img}" alt="${item.name}">
+      <div class="ci-info">
+        <div class="ci-name">${item.name}</div>
+        <div class="ci-price">${fmt(item.price)}</div>
+        <div class="ci-qty">
+          <button class="qty-btn" onclick="changeQty(${idx},-1)">−</button>
+          <span class="qty-num">${item.qty}</span>
+          <button class="qty-btn" onclick="changeQty(${idx},1)">+</button>
+        </div>
       </div>
-    `;
+      <button class="ci-del" onclick="removeItem(${idx})">🗑</button>
+    </div>`).join('');
+  const sub=calcSubtotal();
+  document.getElementById('sub-total').textContent=fmt(sub);
+  document.getElementById('grand-total').textContent=fmt(sub+2000);
+}
+function changeQty(idx,d){cart[idx].qty+=d;if(cart[idx].qty<=0)cart.splice(idx,1);updateCartCount();renderCart();}
+function removeItem(idx){cart.splice(idx,1);updateCartCount();renderCart();}
+function renderConfirm(){
+  const sub=calcSubtotal(); orderTotal=sub+2000;
+  document.getElementById('cf-items').textContent=cart.reduce((s,i)=>s+i.qty,0)+' item';
+  document.getElementById('cf-sub').textContent=fmt(sub);
+  document.getElementById('cf-total').textContent=fmt(orderTotal);
+  document.getElementById('confirm-items').innerHTML=cart.map(i=>`
+    <div class="cart-item">
+      <img class="ci-img" src="${i.img}" alt="${i.name}">
+      <div class="ci-info"><div class="ci-name">${i.name} × ${i.qty}</div><div class="ci-price">${fmt(i.price*i.qty)}</div></div>
+    </div>`).join('');
+}
+function applyVoucher(){
+  const code=document.getElementById('voucher-in').value.trim().toUpperCase();
+  if(code==='ALGO10'){const disc=Math.round(orderTotal*.1);orderTotal-=disc;document.getElementById('cf-total').textContent=fmt(orderTotal)+' (diskon 10%)';alert('Voucher berhasil! Hemat '+fmt(disc));}
+  else alert('Kode voucher tidak valid.');
+}
+function renderPayment(){ document.getElementById('pay-total').textContent=fmt(orderTotal); }
+function selectPay(el,method){ document.querySelectorAll('.pay-card').forEach(c=>c.classList.remove('selected'));el.classList.add('selected');payMethod=method; }
+function placeOrder(){ if(!payMethod){alert('Pilih metode pembayaran dulu 😊');return;} goStep(3); }
+function renderSuccess(){
+  const labels={cash:'Cash / Tunai',dana:'DANA',gopay:'GoPay'};
+  document.getElementById('sc-pay').textContent=labels[payMethod]||payMethod;
+  document.getElementById('sc-total').textContent=fmt(orderTotal);
+  document.getElementById('order-code-display').textContent=randCode();
+  renderReko();
+}
+function renderReko(){
+  const cartNames=cart.map(i=>i.name);
+  const picks=menuData.filter(m=>!cartNames.includes(m.name)).sort(()=>Math.random()-.5).slice(0,4);
+  const grid=document.getElementById('reko-grid');
+  if(!picks.length){grid.innerHTML='<p style="color:#aaa;text-align:center;grid-column:1/-1">Semua menu sudah di keranjang 🎉</p>';return;}
+  grid.innerHTML=picks.map(m=>`
+    <div class="reko-card">
+      <img src="${m.img}" alt="${m.name}">
+      <div class="reko-name">${m.name}</div>
+      <div class="reko-price">Rp ${m.price}</div>
+      <button class="reko-add" onclick="addFromReko('${m.name}',${parseInt(m.price.replace('.',''))})">+ Tambah</button>
+    </div>`).join('');
+}
+function addFromReko(name,price){
+  const m=menuData.find(i=>i.name===name);
+  const ex=cart.find(i=>i.name===name);
+  if(ex)ex.qty++; else cart.push({name,price,qty:1,img:m?m.img:''});
+  updateCartCount();renderReko();
+}
+
+// ── Product Detail ─────────────────────────────────────────────────
+function openDetail(idx, source, event){
+  if(event&&event.target.classList.contains('cbtn'))return;
+  const item = source==='favorit' ? menuData.slice(0,3)[idx] : menuData[idx];
+  if(!item)return;
+  dpCurrentName=item.name; dpCurrentPrice=parseInt(item.price.replace('.',''));
+  dpCurrentImg=item.img; dpQtyVal=1;
+
+  document.getElementById('dp-name').textContent=item.name;
+  document.getElementById('dp-price').textContent='Rp '+item.price;
+  document.getElementById('dp-badge').textContent=item.badge||'';
+  document.getElementById('dp-img').src=item.img;
+  document.getElementById('dp-img').alt=item.name;
+  document.getElementById('dp-qty-num').textContent='1';
+  document.getElementById('dp-wish').textContent='🤍';
+
+  const det=productDetails[item.name];
+  document.getElementById('dp-rating-txt').textContent=det?det.rating:'4.8';
+  document.getElementById('dp-sub').textContent=det?det.sub:'300ml · Buah Segar';
+
+  const hero=document.getElementById('dp-hero');
+  hero.style.background=det?det.heroBg:'linear-gradient(160deg,#FFE0EC,#FFF5F0)';
+
+  const ing=det?det.ingredients:[];
+  document.getElementById('dp-ing-grid').innerHTML=ing.map((x,i)=>
+    `<div class="ing-item${i===0?' ing-full':''}"><span class="ing-icon">${x.icon}</span><span>${x.text}</span></div>`
+  ).join('');
+
+  const top=det?det.topping:[];
+  document.getElementById('dp-top-list').innerHTML=top.map(t=>`<li>${t}</li>`).join('');
+
+  document.getElementById('detail-overlay').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeDetail(){ document.getElementById('detail-overlay').classList.remove('open');document.body.style.overflow=''; }
+function detailOverlayClick(e){ if(e.target.id==='detail-overlay')closeDetail(); }
+function dpQty(d){ dpQtyVal=Math.max(1,dpQtyVal+d);document.getElementById('dp-qty-num').textContent=dpQtyVal; }
+function dpAddToCart(){
+  for(let q=0;q<dpQtyVal;q++){
+    const ex=cart.find(i=>i.name===dpCurrentName);
+    if(ex)ex.qty++; else cart.push({name:dpCurrentName,price:dpCurrentPrice,qty:1,img:dpCurrentImg});
   }
+  updateCartCount();
+  const btn=document.querySelector('.dp-add');
+  btn.innerHTML='✓ Ditambahkan!';
+  btn.style.background='linear-gradient(135deg,#43A047,#66BB6A)';
+  setTimeout(()=>{btn.innerHTML='🛒 Tambah ke Keranjang';btn.style.background='';closeDetail();},1500);
 }
-
-function goToPayment() {
-  currentStep = 'payment';
-  renderCheckout();
-}
-
-function selectPay(element) {
-  document.querySelectorAll('.pay-card').forEach(card => card.classList.remove('selected'));
-  element.classList.add('selected');
-}
-
-function processOrder() {
-  currentStep = 'success';
-  renderCheckout();
-}
-
-function clearCartAndClose() {
-  cart = [];
-  discount = 0;
-  updateCartBadge();
-  closeCheckout();
-}
+function toggleWish(btn){ btn.textContent=btn.textContent==='🤍'?'❤️':'🤍'; }
 </script>
-
 </body>
 </html>
